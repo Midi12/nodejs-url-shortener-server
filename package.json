@@ -1,0 +1,39 @@
+{
+  "name": "nodejs-url-shortener-server",
+  "version": "1.0.0",
+  "description": "Simplistic NodeJS URL Shortener API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Midi12/nodejs-url-shortener-server.git"
+  },
+  "keywords": [
+    "nodejs",
+    "url",
+    "short",
+    "api"
+  ],
+  "author": "Midi12",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Midi12/nodejs-url-shortener-server/issues"
+  },
+  "homepage": "https://github.com/Midi12/nodejs-url-shortener-server#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cuid": "^2.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.5",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0"
+  }
+}

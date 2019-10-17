@@ -1,0 +1,26 @@
+{
+	"extends": "airbnb",
+	"rules": {
+		"linebreak-style": "off",
+		"indent": [
+			"error",
+			"tab",
+			{ "SwitchCase": 1 }
+		],
+		"no-tabs": "off",
+		"comma-dangle": [
+			"error",
+			"never"
+		],
+		"no-useless-constructor": "off",
+		"no-empty-function": [
+			"error",
+			{
+				"allow": [
+					"constructors"
+				]
+			}
+		],
+		"prefer-destructuring": "off"
+	}
+}
