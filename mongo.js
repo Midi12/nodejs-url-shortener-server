@@ -12,7 +12,7 @@ class Mongo {
 		this.started = false;
 	}
 
-	Start() {
+	connect() {
 		mongoose.connect(this.connectionString, MongoOptions, (err) => {
 			if (err) {
 				throw Error(`Failed to connect to ${this.connectionString} : ${err.message}`);
@@ -23,7 +23,7 @@ class Mongo {
 		});
 	}
 
-	Stop() {
+	disconnect() {
 		mongoose.disconnect((err) => {
 			if (err) {
 				throw Error(`Failed to disconnect from ${this.connectionString} : ${err.message}`);

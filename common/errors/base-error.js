@@ -17,7 +17,7 @@ class BaseError {
 		// async save to database
 		const errorService = new ErrorService();
 		if (errorService != null) {
-			errorService.SaveError(this).then();
+			errorService.save(this).then();
 		}
 	}
 }

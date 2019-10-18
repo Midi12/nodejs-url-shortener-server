@@ -4,7 +4,7 @@ class ErrorService {
 	constructor() {}
 
 	/* eslint-disable class-methods-use-this */
-	async SaveError(err) {
+	async save(err) {
 		const error = new Error({
 			message: err.message,
 			name: err.name,

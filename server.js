@@ -4,13 +4,31 @@ const BodyParser = require('body-parser');
 const Mongo = require('./mongo');
 const ApiRouter = require('./api/routes/api-router');
 
-const app = Express();
+class Server {
+	constructor() {
+		this.buildApp();
+		this.setupDb();
+	}
 
-app.use(BodyParser.urlencoded({ extended: true }));
-app.use(BodyParser.json());
-app.use(`/api/${process.env.API_VERSION}`, ApiRouter.getRoutes());
+	buildApp() {
+		this.app = Express();
+		this.app.use(BodyParser.urlencoded({ extended: true }));
+		this.app.use(BodyParser.json());
+		this.app.use(`/api/${process.env.API_VERSION}`, ApiRouter.getRoutes());
+	}
 
-global.gMongo = new Mongo(process.env.DB_CONNECTION_STRING);
-global.gMongo.Start();
+	setupDb() {
+		this.db = new Mongo(process.env.DB_CONNECTION_STRING);
+		this.db.connect();
+	}
 
-module.exports = app;
+	getApp() {
+		return this.app;
+	}
+
+	getDb() {
+		return this.db;
+	}
+}
+
+module.exports = Server;
