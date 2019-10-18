@@ -1,11 +1,13 @@
-const express = require('express');
+const Express = require('express');
 
 const NotImplementedError = require('../../common/errors/not-implemented-error');
 
 class BaseRouter {
 	constructor(Controller) {
-		this.router = express.Router();
-		this.controller = new Controller();
+		this.router = Express.Router();
+		if (Controller !== undefined) {
+			this.controller = new Controller();
+		}
 	}
 
 	getRouter() {
